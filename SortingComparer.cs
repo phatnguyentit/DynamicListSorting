@@ -50,6 +50,9 @@ namespace Console_Testing.BLL.Sorting
             var firstProp = GetProperty(y, sortData[0]);
             var secondProp = GetProperty(x, sortData[0]);
 
+            if (!(firstProp is IComparable && secondProp is IComparable))
+                firstProp = secondProp = null;
+			
             return new
             {
                 Previous = firstProp,
